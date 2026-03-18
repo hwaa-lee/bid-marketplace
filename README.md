@@ -165,12 +165,17 @@ rm -rf ~/.claude-256/plugins/marketplaces/hwaa-lee-bid-marketplace
 | `/bid:setup` | 환경 점검 + 설치 안내 | — |
 | `/bid:design` | 전략 수립 + 목차 생성 | Overseer |
 | `/bid:write <section>` | 섹션 작성/수정 (모드 자동 감지) | Team Lead |
-| `/bid:diagnose` | 품질 진단 + 교차 검증 | Overseer |
 | `/bid:status` | 진행 현황 대시보드 | — |
-| `/bid:output` | 최종 출력 (MD/PDF/PPTX/HTML) | — |
 | `/bid:notion` | 노션에 제안서 업로드 (팀 리뷰용) | — |
 
 > `/bid:write`의 `<section>`은 SSOT ID(`sa-hsm-001`), 제목(`HSM 솔루션`), 키워드(`hsm`), 목차 위치(`3.2.1`) 모두 지원합니다.
+
+품질 진단과 출력은 자연어로 요청합니다:
+
+| 이렇게 말하면 | 동작 |
+|-------------|------|
+| "교차 검증해줘", "전체적으로 봐줘" | 품질 진단 + 교차 검증 |
+| "PDF로 출력해줘", "최종본 출력" | 최종 출력 (MD/PDF/PPTX/HTML) |
 
 ### 자연어로도 사용 가능
 
@@ -181,9 +186,9 @@ rm -rf ~/.claude-256/plugins/marketplaces/hwaa-lee-bid-marketplace
 | "RFP 받았는데 어디서부터?" | → `/bid:design` |
 | "이행계획 어떻게 할지 고민 중이야" | → `/bid:write impl` (탐색 모드) |
 | "HSM 모델 변경해야 해" | → `/bid:write hsm` (재편집 모드) |
-| "전체적으로 좀 약한 것 같아" | → `/bid:diagnose` |
+| "전체적으로 좀 약한 것 같아" | → 품질 진단 |
 | "진행 상황 알려줘" | → `/bid:status` |
-| "PDF로 출력해줘" | → `/bid:output` |
+| "PDF로 출력해줘" | → 최종 출력 |
 | "노션에 올려줘" | → `/bid:notion` |
 
 ### 일반적인 워크플로
@@ -195,8 +200,8 @@ rm -rf ~/.claude-256/plugins/marketplaces/hwaa-lee-bid-marketplace
 4. /bid:write 데이터모델      ← DA 팀이 작성
 5. /bid:write 시스템아키텍처   ← TA 팀이 작성
 6. /bid:write HSM솔루션       ← SA 팀이 작성
-7. /bid:diagnose             ← 전체 교차 검증 + A~D 등급
-8. /bid:output               ← confirmed SSOT 조립 → 최종 출력
+7. "교차 검증해줘"             ← 전체 교차 검증 + A~D 등급
+8. "최종 출력해줘"             ← confirmed SSOT 조립 → 최종 출력
 ```
 
 ### Proposal Guide
