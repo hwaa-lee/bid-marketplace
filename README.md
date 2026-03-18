@@ -270,9 +270,3 @@ proposal-project/
 ```
 /plugin uninstall bid
 ```
-
----
-
-## 라이선스
-
-MIT
