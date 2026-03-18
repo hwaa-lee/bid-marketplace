@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    {
+      "name": "bid",
+      "description": "BidKit — AI 제안서 멀티에이전트 작성 시스템",
+      "git": "https://github.com/hwaa-lee/bidkit.git"
+    }
+  ]
+}
