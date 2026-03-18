@@ -123,13 +123,23 @@ ideation → draft → verifying → verified → tentative → reviewing → co
 
 ## 설치 방법
 
-Claude Code 터미널에서 아래 두 명령어를 순서대로 실행하세요:
+Claude Code 터미널에서 아래 명령어를 순서대로 실행하세요:
 
+```bash
+# 1. 마켓플레이스 등록
+/plugin marketplace add hwaa-lee/bid-marketplace
+
+# 2. BidKit 플러그인 설치
+/plugin install bid@bid-marketplace
 ```
-/install-plugin https://github.com/hwaa-lee/bid-marketplace.git
-```
+
+또는 `/plugin` 명령어로 플러그인 매니저 UI를 열어 직접 탐색·설치할 수도 있습니다.
 
 설치가 완료되면 `/bid:setup`으로 환경이 제대로 구성되었는지 확인할 수 있습니다.
+
+### 업데이트
+
+플러그인 매니저(`/plugin`) → Installed 탭 → bid 선택 → "Update now"
 
 ### 설치 오류 해결
 
@@ -140,7 +150,8 @@ Claude Code 터미널에서 아래 두 명령어를 순서대로 실행하세요
 rm -rf ~/.claude-256/plugins/marketplaces/hwaa-lee-bid-marketplace
 
 # Claude Code에서 다시 설치
-/install-plugin https://github.com/hwaa-lee/bid-marketplace.git
+/plugin marketplace add hwaa-lee/bid-marketplace
+/plugin install bid@bid-marketplace
 ```
 
 ---
